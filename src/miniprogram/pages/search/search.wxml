@@ -1,0 +1,41 @@
+<m-custom-navi title="搜索"/>
+<view class="container">
+	<view class="header-container">
+		<l-search-bar l-container-class="search-container" placeholder="{{' '+randomQ}}" maxlength="30" show-cancel="{{false}}" value="{{q}}" focus="{{inputFocus}}" holdKeyboard="{{true}}" bind:linconfirm="onConfirm" bind:linclear="onClear" />
+	</view>
+	<view class="content-container">
+		<view wx:if="{{!searching}}">
+			<view class="hot-search">
+				<view class="title">
+					<view class="chunk"></view>
+					<text class="title-text">热门搜索</text>
+				</view>
+				<view class="tag-container">
+					<l-tag l-class="tag" wx:for="{{hotKeywords}}" wx:key="index" size="medium" bg-color="{{tagColor[index]}}" data-text="{{item}}" bindtap="onConfirm">{{item}}</l-tag>
+				</view>
+			</view>
+			<view wx:if="{{historyKeywords.length!==0}}" class="history">
+				<view class="title">
+					<view class="chunk"></view>
+					<text class="title-text">历史搜索</text>
+				</view>
+				<view class="tags">
+					<view class="tag-container">
+						<l-tag l-class="tag" wx:for="{{historyKeywords}}" wx:key="index" size="medium" bg-color="#F3F3F3" font-color="#5E5E5E" data-text="{{item}}" bindtap="onConfirm">{{item}}</l-tag>
+					</view>
+				</view>
+			</view>
+		</view>
+		<l-loadmore wx:if="{{searching&&searchResult.length!==0}}" l-class="l-load-more" show="{{loadingType}}" type="{{loadingType?loadingType:defaultLoadingtype}}" color="#93BEE0" size="24" loadingText="加载中..." endText="- 到底啦 -">
+			<view slot="content">
+				<l-card wx:for="{{searchResult}}" wx:for-item="childItem" wx:key="index" type="primary" image="{{childItem.main_img_url}}" title="{{childItem.title}}" l-class="l-card" l-img-class="card-img" class="card" position="right" imageMode="widthFix" titleFirstCard="{{true}}" data-article="{{childItem}}" bindtap="onGotoArticleDetail">
+					<view class="inner-content">
+						{{childItem.synopsis}}
+					</view>
+				</l-card>
+			</view>
+		</l-loadmore>
+		<l-status-show wx:if="{{searching&&searchResult.length===0}}" show="{{true}}" type="data" describe="没有查询到任何数据~~" />
+	</view>
+</view>
+<l-loading show="{{showLoading}}" color="#93BEE0" type="flip" l-container-class="l-normal-loading" />

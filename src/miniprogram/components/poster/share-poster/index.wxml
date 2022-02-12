@@ -1,0 +1,14 @@
+<view class="share-wrap" wx:if="{{visible}}" catchtouchmove="preventDefault">
+	<view class="share-back"></view>
+	<view class="share-container">
+		<view class="close" bindtap="handleClose" data-ptpid="ebe9-1656-ad6a-462e"></view>
+		<image mode="widthFix" src="{{sharePath}}" class="share-image" />
+		<view class="share-tips">保存图片，可分享至朋友圈~</view>
+		<view class="save-btn-box" bindtap="handlePhotoSaved" data-ptpid="4095-16fd-bc97-4868">
+			<l-icon class="icon-save" name="download" size="34" color="#FFF" />
+			<text class="save-btn-text">保存</text>
+		</view>
+	</view>
+</view>
+<painter style="position: absolute; top: -9999rpx;" palette="{{imgDraw}}" bind:imgOK="onImgOK" />
+<m-dialog-modal isShow="{{isModal}}" title="提示" content="您未开启保存图片到相册的权限，请点击确定去开启权限！" confirmType="openSetting" />

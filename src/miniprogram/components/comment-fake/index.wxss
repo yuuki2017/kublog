@@ -1,0 +1,19 @@
+
+@import "../../app.wxss";
+
+.container {
+  height: 80rpx;
+  box-shadow: 4rpx 4rpx 8rpx #dddddd;
+  position: fixed;
+  background-color:rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx 0 30rpx;
+  justify-content: space-around;
+  z-index: 99;
+  border-radius: 10rpx;
+  width: 600rpx;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}

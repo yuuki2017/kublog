@@ -1,0 +1,16 @@
+<view class="container">
+	<l-icon wx:if="{{userInfo}}" name="comment" color="#34BFA3" size="44" bindtap="onComment" />
+	<l-button wx:else special="{{true}}" bind:getuserinfo="onGetUserInfo" open-type="getUserInfo">
+		<l-icon name="comment" color="#34BFA3" size="44" />
+	</l-button>
+  <m-like wx:if="{{userInfo}}" bind:like="onLike" like="{{likeStatus}}"/>
+	<l-button wx:else special="{{true}}" bind:getuserinfo="onGetUserInfo" open-type="getUserInfo">
+		<l-icon name="favor" color="#F4516C" size="44" />
+	</l-button>
+	<l-button special="{{true}}" open-type="share">
+		<l-icon name="share" size="40" />
+	</l-button>
+	<l-icon l-class="kublog" name="moment" color="#00BBB4" size="46" bindtap="onCreateShareImage"/>
+</view>
+<l-toast />
+<m-share-poster isCanDraw="{{isCanDraw}}" article="{{article}}" bind:initData="onCreateShareImage" />

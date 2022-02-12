@@ -1,0 +1,2 @@
+<m-custom-navi title="友情链接"/>
+<l-water-flow generic:l-water-flow-item="m-link-card" column-gap="20rpx" />

@@ -1,0 +1,2 @@
+<l-icon wx:if="{{!like}}" name="favor" color="#F4516C" size="44" bindtap="onLike" />
+<l-icon wx:else l-class="kublog" name="collect" color="#F4516C" size="56" bindtap="onLike" />

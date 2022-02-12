@@ -1,0 +1,11 @@
+<m-custom-navi title="关于"/>
+<view class="margin-xl bg-white padding-xl radius shadow-lg">
+	<view class="text-center margin-bottom text-lg  text-grey">关于kublog酷博</view>
+	<view class="text-content">
+		<view>ウェルカム！欢迎使用kublog博客小程序！</view>
+		<view class="margin-top-sm">市场上开源的微信小程序博客项目多如牛毛，为什么我还要重复造轮子呢？原因其一：在开发该项目前我也浏览了不下十几款博客小程序，不是UI不合我胃口就是存在各种Bug，其二：想要体验已经出来很久的小程序云开发，这种简单的项目再适合不过。但是其实这个项目并不简单，后面我会慢慢更新相关技术文章。这是一款基于微信小程序云开发的简洁风格的博客项目，适合有一定小程序开发经验的开发者改造使用，快速搭建自己的博客小程序。</view>
+		<view class="margin-top-sm">项目是开源的，在主菜单可以复制Github链接拿到源码，如果有帮到你，还希望不吝在Github上点个赞！</view>
+		<view class="margin-top-sm">话说回来，这个项目也耗费了我不少时间，有一些问题是一些大公司的小程序（点名【知乎】）都没有解决，但我还是花精力去解决了这些bug，所以我不希望你拷贝这个项目稍作修改然后发布成自己的独立的项目。使用时有遇到任何问题欢迎随时和我交流，我会持续更新这个项目。</view>
+		<view class="margin-top-sm">更多功能敬请期待！</view>
+	</view>
+</view>

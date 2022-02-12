@@ -1,0 +1,6 @@
+/* colorui/components/cu-custom.wxss */
+.lefe-box{
+  display: flex;
+  justify-content: space-between;
+  width: 200rpx;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "kublog",
+  "version": "0.1.1",
+  "description": "A cloud-based, simple wechatMiniProgram blog project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuuki2017/kublog.git"
+  },
+  "author": "yuuki2017",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuuki2017/kublog/issues"
+  },
+  "homepage": "https://github.com/yuuki2017/kublog#readme"
+}

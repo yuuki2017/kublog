@@ -1,0 +1,12 @@
+<view class="posting-container" style="bottom:{{bottom}}px" catchtouchmove="preventTouchMove">
+	<view class="input-container">
+		<textarea class="input-container-textarea" auto-focus adjust-position="{{false}}" maxlength="80" fixed bindfocus="onFocus" bindblur="onBlur" show-confirm-bar="{{false}}" bindinput="onInput" placeholder-class="in-bar" placeholder='评论最少5个字，最多80个字，请友善发言哟~'></textarea>
+	</view>
+	<view class="posting-bottom">
+		<l-icon name="close" size="32" color="#93BEE0" bindtap="onCancel" />
+		<text class="limit-text" >{{currentLength|0}}/80个字</text>
+		<l-icon name="success" size="42" color="{{canPost?'#93BEE0':'#EBEBEB'}}" bind:tap="{{canPost?'onPost':''}}" />
+	</view>
+</view>
+<l-mask show="{{true}}" bind:lintap="onCancel" />
+<l-dialog />

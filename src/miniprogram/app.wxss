@@ -1,0 +1,35 @@
+@import "miniprogram_npm/colorui/main.wxss";
+@import "miniprogram_npm/colorui/icon.wxss";
+@import "miniprogram_npm/colorui/animation.wxss";
+
+@font-face {
+  font-family: 'kublog';  
+  src: url('//at.alicdn.com/t/font_1809425_gjxt80noikc.eot');
+  src: url('//at.alicdn.com/t/font_1809425_gjxt80noikc.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1809425_gjxt80noikc.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1809425_gjxt80noikc.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1809425_gjxt80noikc.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1809425_gjxt80noikc.svg#kublog') format('svg');
+}
+
+.kublog {
+  font-family: "kublog" !important;
+}
+
+.l-icon-list:before {
+  content: '\e64f';
+}
+
+.l-icon-moment:before {
+  content: '\e611';
+}
+
+.l-icon-avatar:before {
+  content: '\e61a';
+}
+
+.l-icon-collect:before {
+  content: '\e61f';
+}
+
+

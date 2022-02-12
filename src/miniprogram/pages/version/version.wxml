@@ -1,0 +1,14 @@
+<m-custom-navi title="版本日志"/>
+<view class="cu-timeline">
+	<view class="cu-item text-blue" wx:for="{{version}}" wx:key="index">
+		<view class="bg-gradual-lightblue content shadow">
+			<view class="cu-capsule radius">
+				<view class="cu-tag bg-white text-blue">{{item.version}}</view>
+				<view class="cu-tag line-white">{{item.date}}</view>
+			</view>
+			<view class="margin-top-sm text-content" wx:for="{{item.points}}" wx:key="index" wx:for-item="point">
+				<view>{{point}}</view>
+			</view>
+		</view>
+	</view>
+</view>

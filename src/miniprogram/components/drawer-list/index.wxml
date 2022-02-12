@@ -1,0 +1,68 @@
+<scroll-view scroll-y="{{true}}" enable-flex bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" class="DrawerWindow {{showList?'show':''}}" style="height:{{WindowHeight-CustomBar}}px;top:{{CustomBar}}px">
+	<view class="avatar-container shadow-lg">
+		<block wx:if="{{userInfo}}">
+			<l-avatar src="{{userInfo.avatarUrl}}" size="100" />
+			<view class="avatar-text-box">
+				<text class="text-grey">{{userInfo.nickName}}</text>
+			</view>
+		</block>
+		<block wx:else>
+			<l-button special="{{true}}" bind:getuserinfo="onGetUserInfo" open-type="getUserInfo">
+				<l-icon l-class="kublog" name="avatar" color="#FFE2D0" size="100" />
+			</l-button>
+			<view class="avatar-text-box">
+				<text class="text-grey">登录体验更多功能</text>
+			</view>
+		</block>
+	</view>
+	<view wx:for="{{projectArr}}" wx:key="id" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+		<block wx:if="{{item.name==='like'}}">
+			<view wx:if="{{userInfo}}" data-itemName="{{item.name}}" class="cu-item arrow" bindtap="onItemClick">
+				<view class="content">
+					<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+					<text class="text-grey">{{item.showName}}</text>
+				</view>
+			</view>
+			<button wx:else open-type="getUserInfo" class="cu-item arrow cu-btn m-button" bindgetuserinfo="onGetUserInfo" data-itemName="{{item.name}}">
+				<view class="content btn-content">
+					<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+					<text class="text-grey">{{item.showName}}</text>
+				</view>
+			</button>
+		</block>
+		<button wx:elif="{{item.name==='contact'}}" open-type="contact" class="cu-item arrow cu-btn m-button">
+			<view class="content btn-content">
+				<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+				<text class="text-grey">{{item.showName}}</text>
+			</view>
+		</button>
+		<view wx:elif="{{item.name==='github'}}" class="cu-item arrow" bindtap="onCopyLink">
+			<view class="content">
+				<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+				<text class="text-grey">{{item.showName}}</text>
+			</view>
+		</view>
+		<view wx:elif="{{item.name==='support'}}" class="cu-item arrow" bindtap="onShowSupportCode">
+			<view class="content">
+				<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+				<text class="text-grey">{{item.showName}}</text>
+			</view>
+		</view>
+		<button open-type="feedback" wx:elif="{{item.name==='advice'}}" class="cu-item arrow cu-btn m-button feedback-btn">
+			<view class="content btn-content">
+				<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+				<text class="text-grey">{{item.showName}}</text>
+			</view>
+		</button>
+		<view wx:else class="cu-item arrow" data-itemName="{{item.name}}" bindtap="onItemClick">
+			<view class="content">
+				<text class="cuIcon-{{item.icon}} text-{{item.iconColor}}"></text>
+				<text class="text-grey">{{item.showName}}</text>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+<view class="DrawerClose {{showList?'show':''}}" bindtap="onHideList" catchtouchmove="preventTouchMove">
+	<text class="cuIcon-pullright"></text>
+</view>
+<l-toast />

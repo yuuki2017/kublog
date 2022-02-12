@@ -1,0 +1,45 @@
+<m-custom-navi title="kublog" />
+<view class="container">
+	<l-skeleton loading="{{showSkeleton}}" title-height="50rpx" title-width="70%" rows="5" rows-width="100%" rows-height="{{['40rpx','40rpx','40rpx','40rpx','40rpx']}}" active="{{true}}">
+		<view class="top-container">
+			<text class="title">{{article.title}}</text>
+			<view class="tag-date-container">
+				<view wx:if="{{article.tag}}" class="tag-container">
+					<l-tag l-class="tag" wx:for="{{article.tag}}" wx:key="index" size="medium" bg-color="{{tagColor[index]}}">{{item}}</l-tag>
+				</view>
+				<view class="date-container">
+					<l-icon name="time" size="28" color="#93BEE0" />
+					<text class="date">{{article.create_time}}</text>
+				</view>
+			</view>
+		</view>
+		<parser class="{{comment&&comment.length!==0?'detail':'detail-no-comment'}}" html="{{article.content}}" tag-style="{{tagStyle}}" />
+	</l-skeleton>
+
+	<view wx:if="{{article&&comment&&comment.length!==0}}" class="comment-container">
+		<view class="comment-title-container">
+			<text class="comment-title">— 评论 —</text>
+		</view>
+		<l-loadmore wx:if="{{comment.length!==0}}" l-class="l-load-more" show="{{loadingType}}" type="{{loadingType?loadingType:defaultLoadingtype}}" color="#93BEE0" size="24" loadingText="加载中..." endText="- 到底啦 -">
+			<view slot="content">
+				<block wx:for="{{comment}}" wx:key="_id">
+					<view class="comment-top-container">
+						<view class="author-contaienr">
+							<image class="author-src" src="{{item.user_info[0].avatar_url}}"></image>
+							<text class="c-name">{{item.user_info[0].nickname?item.user_info[0].nickname:'默认用户'}}</text>
+						</view>
+						<text class="c-time">{{item.create_time}}</text>
+					</view>
+					<view class="comment-bottom-container">
+						<text class="c-content">{{item.content}}</text>
+					</view>
+				</block>
+			</view>
+		</l-loadmore>
+	</view>
+</view>
+<m-comment-true wx:if="{{posting}}" bind:cancelPost="onShowPosting" bind:setPostedData="onSetPostedData" targetId="{{article._id}}" pageSize="{{paging.pageSize}}" totalPage="{{totalPage}}" currentPage="{{currentPage}}" totalCount="{{comment.length}}" />
+<m-comment-fake userInfo="{{userInfo}}" targetId="{{article._id}}" likeStatus="{{likeStatus}}" article="{{article}}" bind:likeClicked="onLikeClicked" bind:posting="onShowPosting" />
+<view class="to-top-container" hidden="{{!showToTop}}" bindtap="onToTop">
+	<l-icon name="up" size="32" color="#93BEE0" />
+</view>

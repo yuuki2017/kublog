@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-lightGrey" isNav="{{true}}" showWave="{{true}}" isHome="{{true}}">
+	<view slot="listIcon" class="list-icon text-shadow-ku" bindtap="onShowList">
+		<l-icon l-class="kublog" name="list" color="#eee" size="58" />
+	</view>
+	<view slot="content" class="text-shadow-ku">
+		<text class="text-white text-bold">kublog</text>
+	</view>
+</cu-custom>
+<view class="container">
+	<l-search-bar disabled="{{true}}" placeholder="搜索" show-cancel="{{false}}" l-class="search-bg-class" l-container-class="l-search-container" canClick="{{false}}" class="search-container" bindtap="onSearch" />
+	<l-tabs l-header-class="swipeable-header" l-inactive-class="swipeable-class-inactive" l-line-class="line-class" l-active-class-="swipeable-class-active" bind:linchange="onChangeTab" swipeable has-line="{{true}}" animated-for-line="{{true}}" inactive-color="#afafaf" contentHeight="{{swiperHeight}}">
+		<l-tabpanel tab="技术" key="one" slot="one">
+			<l-segment class="segment-view" l-class="segment-view" l-tabs-item-class="l-tabs-item" l-header-class="segment-header" scrollable="{{segmentCount>5?true:false}}" l-inactive-class="swipeable-class-inactive" has-line="{{false}}" even="{{segmentCount>5?false:true}}" l-active-class-="segment-class-active" inactive-color="#afafaf" bind:linchange="onChangeSegment">
+				<l-segment-item wx:for="{{articleCategories}}" wx:key="_id" tab="{{item.name}}" key="{{item._id}}" slot="{{item._id}}" />
+			</l-segment>
+			<scroll-view data-categoryid="{{item._id}}" hidden="{{item._id!==currentCategoryIndex}}" wx:for="{{articleCategories}}" wx:key="_id" scroll-y="{{true}}" scroll-anchoring="{{true}}" enable-back-to-top="{{true}}" style="height:{{jishuScrollHeight}}rpx" bindscrolltolower="onScrollBottom" scroll-with-animation="{{true}}">
+				<l-loadmore wx:if="{{jishuArticles[item._id].detail.length!==0}}" l-class="l-load-more" show="{{jishuArticles[item._id].loadingType}}" type="{{jishuArticles[item._id].loadingType?jishuArticles[item._id].loadingType:defaultLoadingtype}}" color="#93BEE0" size="24" loadingText="加载中..." endText="- yuuki作品 -">
+					<view slot="content">
+						<l-card wx:for="{{jishuArticles[item._id].detail}}" wx:for-item="childItem" wx:key="index" type="primary" image="{{childItem.main_img_url}}" title="{{childItem.title}}" l-class="l-card" l-img-class="card-img" class="l-card" position="right" imageMode="widthFix" titleFirstCard="{{true}}" data-article="{{childItem}}" bindtap="onGotoArticleDetail">
+							<view class="inner-content">
+								{{childItem.synopsis}}
+							</view>
+						</l-card>
+					</view>
+				</l-loadmore>
+				<l-status-show wx:else l-class="l-no-data" show="{{true}}" type="data" full-screen="{{false}}" />
+			</scroll-view>
+		</l-tabpanel>
+		<l-tabpanel tab="杂记" key="two" slot="two">
+			<scroll-view scroll-y="{{true}}" scroll-anchoring="{{true}}" enable-back-to-top style="height:{{swiperHeight}}rpx" bindscrolltolower="onScrollBottom" scroll-with-animation>
+				<l-loadmore wx:if="{{zajiArticles.detail.length!==0}}" l-class="l-load-more" show="{{zajiArticles.loadingType}}" type="{{zajiArticles.loadingType?zajiArticles.loadingType:defaultLoadingtype}}" color="#93BEE0" size="24" loadingText="加载中..." endText="- yuuki作品 -">
+					<view slot="content">
+						<l-card wx:for="{{zajiArticles.detail}}" wx:key="index" type="primary" image="{{item.main_img_url}}" title="{{item.title}}" l-class="l-card" l-img-class="card-img" class="l-card" position="right" imageMode="widthFix" titleFirstCard="{{true}}" full="{{true}}" data-article="{{item}}" bindtap="onGotoArticleDetail">
+							<view class="inner-content">
+								{{item.synopsis}}
+							</view>
+						</l-card>
+					</view>
+				</l-loadmore>
+				<l-status-show wx:else l-class="l-no-data" show="{{true}}" type="data" full-screen="{{false}}" />
+			</scroll-view>
+		</l-tabpanel>
+	</l-tabs>
+</view>
+<m-drawer-list showList="{{showList}}" bind:hideList="onHideList" userInfo="{{userInfo}}" />
+<m-loading showLoading="{{showLoading}}" />
+<l-loading show="{{showNormalLoading}}" color="#93BEE0" type="flip" l-container-class="l-normal-loading" />

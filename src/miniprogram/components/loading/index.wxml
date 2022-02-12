@@ -1,0 +1,6 @@
+<l-loading show="{{showLoading}}" custom="{{true}}" full-screen="{{true}}" >
+ <view class="loading-container">
+  <image class="loading-img" src="../../images/loading.gif"></image>
+	<text class="loading-text">欢迎访问kublog，请稍等~</text>
+	</view>
+</l-loading>

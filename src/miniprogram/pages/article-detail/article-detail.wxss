@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx;
+}
+
+.tag-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0 40rpx 0;
+}
+
+.tag-container {
+  display: flex;
+}
+
+.tag {
+  margin-right: 20rpx !important;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  font-size: 28rpx;
+  margin-left: 16rpx;
+  vertical-align: middle;
+  color: #666;
+  letter-spacing: 1rpx;
+}
+
+.title {
+  width: 100%;
+  font-size: 34rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  color: #666;
+}
+
+.detail {
+  color: #666;
+  font-size: 30rpx;
+  line-height: 52rpx;
+  letter-spacing: 2rpx;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  margin-bottom: 48rpx;
+}
+
+.detail-no-comment{
+  color: #666;
+  font-size: 30rpx;
+  line-height: 52rpx;
+  letter-spacing: 2rpx;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  margin-bottom: 108rpx;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 100rpx 0;
+}
+
+.comment-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.comment-title {
+  color: #666;
+  font-weight: 600;
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+}
+
+.comment-top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-contaienr {
+  display: flex;
+  align-items: center;
+}
+
+.author-src {
+  border-radius: 50%;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.c-name {
+  margin-left: 20rpx;
+  max-width: 360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666;
+}
+
+.c-time {
+  white-space: nowrap;
+  color: #666;
+}
+
+.comment-bottom-container {
+  margin: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.c-content {
+  color: #666;
+  letter-spacing: 2rpx;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.to-top-container{
+  position: fixed;
+  right: 0rpx;
+  bottom: 200rpx;
+  z-index: 2;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  box-shadow:0px 3px 8px 0px rgba(155,193,185,0.5);
+  display: flex;
+  justify-content: center;
+  background-color:rgba(255, 255, 255, 0.8);
+  align-items: center;
+  transform: translate(-50%, -10%);
+}

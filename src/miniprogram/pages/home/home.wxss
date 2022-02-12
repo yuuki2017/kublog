@@ -1,0 +1,110 @@
+.l-card {
+  margin: 26rpx auto !important;
+  box-shadow: 0 4rpx 20rpx 0 rgba(230, 232, 235, 0.5) !important;
+}
+
+.card-img {
+  border-radius: 4px !important;
+  height: 160rpx !important;
+}
+
+.list-icon {
+  z-index: 99;
+}
+
+.inner-content {
+  max-width: 350rpx;
+  color: #666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.swipeable-header {
+  margin: 0 100rpx auto !important;
+  width: 327rpx !important;
+  border: 0 !important;
+  margin-bottom: 20rpx !important;
+}
+
+.swipeable-class-inactive {
+  border-width: 8rpx !important;
+}
+
+.swipeable-class-active {
+  font-weight: 900 !important;
+  font-size: 34rpx !important;
+  border-width: 6rpx !important;
+}
+
+.line-class {
+  width: 60rpx !important;
+  height: 6rpx !important;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%) !important;
+}
+
+.tag-view {
+  display: flex;
+  margin: 0rpx 0 20rpx 0 !important;
+  height: auto !important;
+}
+
+.segment-view {
+  padding: 10rpx 0 10rpx 0 !important;
+  height: 80rpx !important;
+}
+
+.segment-header {
+  margin: 0 auto;
+  width: 600rpx !important;
+}
+
+.segment-class-active {
+  font-weight: 900 !important;
+  background: linear-gradient(to bottom, #91b7e2 0%, #ccd5e0 100%);
+  color: #fff !important;
+  border-radius: 6rpx !important;
+}
+
+.l-search-container {
+  width: 180rpx !important;
+}
+
+.search-bg-class {
+  height: 60rpx !important;
+  padding-left: 20rpx !important;
+}
+
+.search-container {
+  position: absolute;
+  margin: 14rpx 120rpx 0 0;
+  right: 0rpx;
+}
+
+.l-tabs-item {
+  transition: .1s all linear !important;
+}
+
+.l-load-more {
+  padding-top: 20rpx !important;
+  padding-bottom: 66rpx !important;
+}
+
+.l-normal-loading {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99 !important;
+}
+
+.l-no-data {
+  position: fixed !important;
+  top: 30% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99 !important;
+}

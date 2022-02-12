@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/article-detail/article-detail",
+    "pages/about/about",
+    "pages/version/version",
+    "pages/link/link",
+    "pages/like/like",
+    "pages/search/search"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "usingComponents": {
+    "m-drawer-list": "components/drawer-list/index",
+    "m-link-card": "components/link-card/index",
+    "m-loading": "components/loading/index",
+    "m-comment-fake": "components/comment-fake/index",
+    "m-comment-true": "components/comment-true/index",
+    "m-like": "components/like/index",
+    "m-share-poster": "components/poster/share-poster/index",
+    "m-dialog-modal": "components/poster/dialog-modal/index",
+    "m-custom-navi": "components/custom-navi/index",
+    "parser": "miniprogram_npm/parser/parser",
+    "cu-custom": "miniprogram_npm/colorui/components/cu-custom",
+    "l-icon": "miniprogram_npm/lin-ui/icon/index",
+    "l-button": "miniprogram_npm/lin-ui/button/index",
+    "l-tabs": "miniprogram_npm/lin-ui/tabs/index",
+    "l-tabpanel": "miniprogram_npm/lin-ui/tabpanel/index",
+    "l-card": "miniprogram_npm/lin-ui/card/index",
+    "l-segment": "miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item": "miniprogram_npm/lin-ui/segment-item/index",
+    "l-search-bar": "miniprogram_npm/lin-ui/search-bar/index",
+    "l-tag": "miniprogram_npm/lin-ui/tag/index",
+    "l-transition": "miniprogram_npm/lin-ui/transition/index",
+    "l-avatar": "miniprogram_npm/lin-ui/avatar/index",
+    "l-toast": "miniprogram_npm/lin-ui/toast/index",
+    "l-water-flow": "miniprogram_npm/lin-ui/water-flow/index",
+    "l-loadmore": "miniprogram_npm/lin-ui/loadmore/index",
+    "l-skeleton": "miniprogram_npm/lin-ui/skeleton/index",
+    "l-loading": "miniprogram_npm/lin-ui/loading/index",
+    "l-status-show": "miniprogram_npm/lin-ui/status-show/index",
+    "l-mask": "miniprogram_npm/lin-ui/mask/index",
+    "l-dialog": "miniprogram_npm/lin-ui/dialog/index",
+    "l-input": "miniprogram_npm/lin-ui/input/index",
+    "l-message": "miniprogram_npm/lin-ui/message/index"
+  }
+}

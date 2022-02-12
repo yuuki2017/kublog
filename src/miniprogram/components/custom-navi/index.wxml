@@ -1,0 +1,6 @@
+<cu-custom bgColor="bg-lightGrey" isNav="{{true}}" showWave="{{true}}" isCustom="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content" class="text-shadow-ku">
+		<text class="text-white text-bold">{{title}}</text>
+	</view>
+</cu-custom>

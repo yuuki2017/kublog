@@ -1,0 +1,33 @@
+.l-card {
+  margin: 26rpx auto !important;
+  box-shadow: 0 4rpx 20rpx 0 rgba(230, 232, 235, 0.5) !important;
+}
+
+.card-img {
+  border-radius: 4px !important;
+  height: 160rpx !important;
+}
+
+.inner-content {
+  max-width: 350rpx;
+  color: #666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.l-load-more{
+  padding-top: -16rpx !important;
+  padding-bottom: 24rpx !important;
+}
+
+.l-normal-loading{
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99 !important;
+}

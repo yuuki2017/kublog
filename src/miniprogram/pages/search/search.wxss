@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 99;
+  width: 100%;
+}
+
+.search-container {
+  margin: 30rpx 0 10rpx 0;
+}
+
+.content-container {
+  margin: 100rpx 30rpx 30rpx 30rpx;
+}
+
+.l-card {
+  margin: 26rpx auto !important;
+  box-shadow: 0 4rpx 20rpx 0 rgba(230, 232, 235, 0.5) !important;
+}
+
+.card-img {
+  border-radius: 4px !important;
+  height: 160rpx !important;
+}
+
+.inner-content {
+  max-width: 350rpx;
+  color: #666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.l-load-more {
+  margin-top: -16rpx !important;
+  margin-bottom: -18rpx !important;
+}
+
+.l-normal-loading {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99 !important;
+}
+
+.hot-search {
+  margin-top: 70rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.history {
+  margin: 90rpx 0 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24rpx;
+  margin-left: 34rpx;
+}
+
+.tag {
+  margin: 0 26rpx 20rpx 0 !important;
+}
+
+.title {
+  line-height: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chunk {
+  height: 15px;
+  width: 5px;
+  background-color: #000;
+  display: inline-block;
+  margin-right: 10px;
+}

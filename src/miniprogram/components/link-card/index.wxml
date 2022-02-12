@@ -1,0 +1,24 @@
+<l-card type="cover" image="{{data.image}}" title="{{data.title}}" l-class="life-container" l-img-class="life-img" l-title-class="life-title" imageMode="widthFix" bindtap="onClick" data-appid="{{data.appId}}" data-path="{{data.path}}" data-link="{{data.link}}">
+	<view class="life-product-contianer">
+		<view class="tag-container">
+			<l-tag wx:for="{{data.tags}}" wx:key="index" l-class="tag" size="mini" bg-color="{{util.setTagColor(index)}}">{{item}}</l-tag>
+		</view>
+		<view class="art-content">{{data.describe}}</view>
+	</view>
+</l-card>
+<l-toast />
+
+<wxs module="util">
+	var setTagColor = function(index) {
+		if (index === 0) {
+			return null
+		} else if (index === 1) {
+			return "#105819"
+		} else {
+			return "#EA723E"
+		}
+	}
+	module.exports = {
+		setTagColor: setTagColor
+	}
+</wxs>

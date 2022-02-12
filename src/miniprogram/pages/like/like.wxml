@@ -1,0 +1,12 @@
+<m-custom-navi title="我的收藏" />
+<l-loadmore wx:if="{{like.length!==0}}" l-class="l-load-more" show="{{loadingType}}" type="{{loadingType?loadingType:defaultLoadingtype}}" color="#93BEE0" size="24" loadingText="加载中..." endText="- 到底啦 -">
+	<view slot="content">
+		<l-card wx:for="{{like}}" wx:for-item="childItem" wx:key="index" type="primary" image="{{childItem.article[0].main_img_url}}" title="{{childItem.article[0].title}}" l-class="l-card" l-img-class="card-img" class="card" position="right" imageMode="widthFix" titleFirstCard="{{true}}" data-article="{{childItem.article[0]}}" bindtap="onGotoArticleDetail">
+			<view class="inner-content">
+				{{childItem.article[0].synopsis}}
+			</view>
+		</l-card>
+	</view>
+</l-loadmore>
+<l-status-show wx:else show="{{true}}" type="data" describe="暂时没有任何收藏~~" />
+<l-loading show="{{showLoading}}" color="#93BEE0" type="flip" l-container-class="l-normal-loading" />
